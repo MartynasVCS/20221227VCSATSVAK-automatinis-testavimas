@@ -39,5 +39,11 @@ namespace CalculatorUnitTests
 
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [Test]
+        public void Sum3And3()
+        {
+            Assert.AreEqual(6, Calculator.Calculator.SumInt(3, 3));
+        }
     }
 }
