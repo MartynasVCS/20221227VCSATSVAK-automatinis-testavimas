@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
 
-namespace CalculatorUnitTests
+namespace UnitTests
 {
-    public class UnitTests
+    public class CalculatorUnitTests
     {
         [Test]
         public void Sum1And1()
