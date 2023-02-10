@@ -12,7 +12,7 @@ namespace SeleniumTestsWithoutPOM
             IWebDriver driver = new ChromeDriver();
             driver.Url = "https://demo.seleniumeasy.com/basic-first-form-demo.html";
 
-            string expectedResult = "LabasLabasLabasLabasLabasLabasLabasLabasLabasLabasLabasLabas";
+            string expectedResult = "Test";
             IWebElement inputEnterMessage = driver.FindElement(By.XPath("//*[@id='get-input']//input"));
             IWebElement buttonShowMessage = driver.FindElement(By.XPath("//*[@id='get-input']/button"));
             IWebElement spanMessageText = driver.FindElement(By.XPath("//*[@id='display']"));
