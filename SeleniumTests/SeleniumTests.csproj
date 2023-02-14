@@ -49,13 +49,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeleniumEasy\SimpleFormDemoTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DemoQA\" />
-    <Folder Include="SeleniumEasy\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SeleniumFramework\SeleniumFramework.csproj">
+      <Project>{d12af0f6-cf85-433a-b6a4-eabf2a452b5c}</Project>
+      <Name>SeleniumFramework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
