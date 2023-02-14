@@ -17,7 +17,7 @@ namespace SeleniumFramework
             return driver;
         }
 
-        public static void OpenUrl(string url, string temp)
+        public static void OpenUrl(string url)
         {
             // Su refresh
             driver.Url = url;
