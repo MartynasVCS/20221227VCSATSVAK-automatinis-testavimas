@@ -2,6 +2,11 @@
 {
     public class SimpleFormDemo
     {
+        public static void Open()
+        {
+            Driver.OpenUrl("https://demo.seleniumeasy.com/basic-first-form-demo.html");
+        }
+
         public static void EnterMessage(string message)
         {
             string locator = "//*[@id='get-input']//input";
