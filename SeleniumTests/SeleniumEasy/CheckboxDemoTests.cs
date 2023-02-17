@@ -24,6 +24,18 @@ namespace SeleniumTests.SeleniumEasy
             Assert.AreEqual(expectedMessage, actualResult);
         }
 
+        [Test]
+        public void MultipleCheckboxes()
+        {
+            string expectedButtonText = "Uncheck All";
+
+            CheckboxDemo.ClickEachOfMultipleCheckboxes();
+            string actualButtonText = CheckboxDemo.GetMultipleCheckboxButtonText();
+
+            Assert.AreEqual(expectedButtonText, actualButtonText);
+        }
+
+
         [TearDown]
         public void TearDown()
         {
