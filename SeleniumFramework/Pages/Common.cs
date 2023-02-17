@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,6 +68,36 @@ namespace SeleniumFramework.Pages
             {
                 element.Click();
             }
+        }
+
+        internal static void WaitForElementToBeClickable(string locator)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+        }
+
+        internal static void WaitForElementAttributeToContainValue(string locator, string attributeName, string attributePartialValue)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(d => d.FindElement(By.XPath(locator)).GetAttribute(attributeName).Contains(attributePartialValue));
+        }
+
+        internal static void WaitForElementCssPropertyToBe(string locator, string cssPropertyName, string cssPropertyValue)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(d => d.FindElement(By.XPath(locator)).GetCssValue(cssPropertyName) == cssPropertyValue);
+        }
+
+        internal static void WaitForElementToBeVisible(string locator)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.PollingInterval = TimeSpan.FromSeconds(4);
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+        }
+
+        internal static bool CheckIfElementIsEnabled(string locator)
+        {
+            return GetElement(locator).Enabled;
         }
     }
 }

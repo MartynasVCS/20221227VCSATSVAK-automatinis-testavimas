@@ -51,6 +51,7 @@
     <Compile Include="DemoQA\TextBoxTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeleniumEasy\CheckboxDemoTests.cs" />
+    <Compile Include="DemoQA\DynamicPropertiesTests.cs" />
     <Compile Include="SeleniumEasy\SimpleFormDemoTests.cs" />
   </ItemGroup>
   <ItemGroup />
