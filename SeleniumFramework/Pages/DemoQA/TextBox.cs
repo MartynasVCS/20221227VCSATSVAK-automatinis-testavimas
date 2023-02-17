@@ -1,7 +1,4 @@
-﻿using OpenQA.Selenium;
-using System;
-
-namespace SeleniumFramework.Pages.DemoQA
+﻿namespace SeleniumFramework.Pages.DemoQA
 {
     public class TextBox
     {
