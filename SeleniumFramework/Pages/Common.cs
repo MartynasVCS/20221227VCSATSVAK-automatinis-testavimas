@@ -1,9 +1,15 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Extensions;
 
 namespace SeleniumFramework.Pages
 {
     internal class Common
     {
+        internal static void Wait(int milliseconds)
+        {
+            System.Threading.Thread.Sleep(milliseconds);
+        }
+
         private static IWebElement GetElement(string locator)
         {
             return Driver.GetDriver().FindElement(By.XPath(locator));
@@ -22,6 +28,26 @@ namespace SeleniumFramework.Pages
         internal static void SendKeys(string locator, string message)
         {
             GetElement(locator).SendKeys(message);
+        }
+
+        internal static void ScrollBy(int pixelsRight, int pixelsDown)
+        {
+            ExecuteJavaScript($"window.scrollBy({pixelsRight}, {pixelsDown})");
+        }
+
+        private static void ExecuteJavaScript(string script)
+        {
+            Driver.GetDriver().ExecuteJavaScript(script);
+        }
+
+        internal static string GetAttributeValue(string locator, string attributeName)
+        {
+            return GetElement(locator).GetAttribute(attributeName);
+        }
+
+        internal static string GetCssValue(string locator, string propertyName)
+        {
+            return GetElement(locator).GetCssValue(propertyName);
         }
     }
 }
