@@ -1,15 +1,15 @@
 ﻿using NUnit.Framework;
 using SeleniumFramework;
 using SeleniumFramework.Pages.DemoQA;
+using SeleniumTests.BaseTests;
 
 namespace SeleniumTests.DemoQA
 {
-    internal class TextBoxTests
+    internal class TextBoxTests : BaseTest
     {
         [SetUp]
-        public void SetUp()
+        public void Open()
         {
-            Driver.SetupDriver();
             TextBox.Open();
         }
 
@@ -48,12 +48,6 @@ namespace SeleniumTests.DemoQA
 
             Assert.IsTrue(TextBox.CheckIfEmailErrorIsDisplayed());
             Assert.IsTrue(TextBox.CheckIfEmailBorderIsRed());
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            Driver.CloseDriver();
         }
     }
 }

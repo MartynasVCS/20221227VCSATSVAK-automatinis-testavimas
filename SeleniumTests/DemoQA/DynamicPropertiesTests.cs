@@ -1,15 +1,15 @@
 ﻿using NUnit.Framework;
 using SeleniumFramework.Pages.DemoQA;
 using SeleniumFramework;
+using SeleniumTests.BaseTests;
 
 namespace SeleniumTests.DemoQA
 {
-    internal class DynamicPropertiesTests
+    internal class DynamicPropertiesTests : BaseTest
     {
         [SetUp]
-        public void SetUp()
+        public void Open()
         {
-            Driver.SetupDriver();
             DynamicProperties.Open();
         }
 
@@ -35,12 +35,6 @@ namespace SeleniumTests.DemoQA
         public void WaitForButtonToBeVisible()
         {
             DynamicProperties.WaitForButtonToBeVisible();
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            Driver.CloseDriver();
         }
     }
 }
