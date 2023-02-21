@@ -152,5 +152,14 @@ namespace SeleniumFramework.Pages
             actions.Click(element);
             actions.Perform();
         }
+
+        internal static void MoveMouseToElement(string locator)
+        {
+            Actions actions = new Actions(Driver.GetDriver());
+            IWebElement element = GetElement(locator);
+
+            actions.MoveToElement(element);
+            actions.Perform();
+        }
     }
 }

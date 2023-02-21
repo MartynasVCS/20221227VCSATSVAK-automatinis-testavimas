@@ -23,7 +23,12 @@
             internal static string messageDoubleClick = "//*[@id='doubleClickMessage']";
             internal static string messageRightClick = "//*[@id='rightClickMessage']";
             internal static string messageLeftClick = "//*[@id='dynamicClickMessage']";
+        }
 
+        internal class Tooltips
+        {
+            internal static string elementTooltip = "//*[@class='tooltip-inner']";
+            internal static string buttonHoverMeToSee = "//*[@id='toolTipButton']";
         }
     }
 }
