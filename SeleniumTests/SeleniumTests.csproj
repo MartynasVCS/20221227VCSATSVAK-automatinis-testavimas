@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="BaseTests\BaseTest.cs" />
     <Compile Include="DemoQA\ButtonsTests.cs" />
+    <Compile Include="DemoQA\SelectMenuTests.cs" />
     <Compile Include="DemoQA\TextBoxTests.cs" />
     <Compile Include="DemoQA\TooltipsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

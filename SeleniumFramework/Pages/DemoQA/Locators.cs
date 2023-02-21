@@ -30,5 +30,11 @@
             internal static string elementTooltip = "//*[@class='tooltip-inner']";
             internal static string buttonHoverMeToSee = "//*[@id='toolTipButton']";
         }
+
+        internal class SelectMenu
+        {
+            internal static string dropdownTitle = "//*[@id='selectOne']";
+            internal static string dropdownTitleOptionMr = "//*[@id='selectOne']//div[text()='Mr.']";
+        }
     }
 }
