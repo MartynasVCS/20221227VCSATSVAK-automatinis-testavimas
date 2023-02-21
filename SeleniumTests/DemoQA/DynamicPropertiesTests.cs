@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using SeleniumFramework.Pages.DemoQA;
-using SeleniumFramework;
 using SeleniumTests.BaseTests;
 
 namespace SeleniumTests.DemoQA
