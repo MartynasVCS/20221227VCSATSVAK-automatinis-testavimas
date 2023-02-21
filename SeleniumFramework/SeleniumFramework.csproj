@@ -58,9 +58,11 @@
     <Compile Include="Pages\DemoQA\Buttons.cs" />
     <Compile Include="Pages\DemoQA\Locators.cs" />
     <Compile Include="Pages\DemoQA\TextBox.cs" />
+    <Compile Include="Pages\DemoQA\Tooltips.cs" />
     <Compile Include="Pages\SeleniumEasy\CheckboxDemo.cs" />
     <Compile Include="Pages\DemoQA\DynamicProperties.cs" />
     <Compile Include="Pages\SeleniumEasy\DynamicDataLoadingDemo.cs" />
+    <Compile Include="Pages\SeleniumEasy\SelectDropdownList.cs" />
     <Compile Include="Pages\SeleniumEasy\SimpleFormDemo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
