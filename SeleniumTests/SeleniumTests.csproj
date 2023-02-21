@@ -57,6 +57,7 @@
     <Compile Include="SeleniumEasy\CheckboxDemoTests.cs" />
     <Compile Include="DemoQA\DynamicPropertiesTests.cs" />
     <Compile Include="SeleniumEasy\DynamicDataLoadingDemoTests.cs" />
+    <Compile Include="SeleniumEasy\JavascriptsAlertsTests.cs" />
     <Compile Include="SeleniumEasy\SelectDropdownListTests.cs" />
     <Compile Include="SeleniumEasy\SimpleFormDemoTests.cs" />
   </ItemGroup>

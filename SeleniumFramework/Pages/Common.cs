@@ -179,5 +179,10 @@ namespace SeleniumFramework.Pages
             SelectElement selectElement = GetSelectElement(locator);
             selectElement.SelectByText(text);
         }
+
+        internal static string GetAlertText()
+        {
+            return Driver.GetDriver().SwitchTo().Alert().Text;
+        }
     }
 }
