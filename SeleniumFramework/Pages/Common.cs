@@ -95,9 +95,34 @@ namespace SeleniumFramework.Pages
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
         }
 
+        internal static void WaitForElementToNotContainText(string locator, string textToNotBePresent)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(d => !d.FindElement(By.XPath(locator)).Text.Contains(textToNotBePresent));
+        }
+
         internal static bool CheckIfElementIsEnabled(string locator)
         {
             return GetElement(locator).Enabled;
+        }
+
+        // Geresnis pavadinimas bool atveju būtų IsElementSelected
+        internal static bool CheckIfElementIsSelected(string locator)
+        {
+            return GetElement(locator).Selected;
+        }
+
+        internal static List<bool> GetMultipleElementSelectedStatus(string locator)
+        {
+            List<IWebElement> elements = GetElements(locator);
+            List<bool> statuses = new List<bool>();
+
+            foreach (IWebElement element in elements)
+            {
+                statuses.Add(element.Selected);
+            }
+
+            return statuses;
         }
     }
 }
