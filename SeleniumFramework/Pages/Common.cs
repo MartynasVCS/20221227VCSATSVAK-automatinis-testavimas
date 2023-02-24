@@ -184,5 +184,11 @@ namespace SeleniumFramework.Pages
         {
             return Driver.GetDriver().SwitchTo().Alert().Text;
         }
+
+        internal static void WaitForTitleToBe(string expectedTitle)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(60));
+            wait.Until(ExpectedConditions.TitleIs(expectedTitle));
+        }
     }
 }
