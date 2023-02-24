@@ -25,13 +25,11 @@ namespace SeleniumTests.SeleniumEasy
             Assert.AreEqual(expectedResult, actualResult);
         }
 
-        [Test]
-        public void TwoInputFields()
+        [TestCase("7", "5", "12")]
+        [TestCase("7", "a", "NaN")]
+        [TestCase("-11111111111111111111111", "11111111111111111111111", "0")]
+        public void TwoInputFields(string inputAValue, string inputBValue, string expectedResult)
         {
-            string inputAValue = "5";
-            string inputBValue = "7";
-            string expectedResult = "12";
-
             SimpleFormDemo.EnterInputA(inputAValue);
             SimpleFormDemo.EnterInputB(inputBValue);
             SimpleFormDemo.ClickGetTotalButton();
