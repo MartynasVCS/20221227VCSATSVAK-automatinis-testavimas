@@ -17,7 +17,7 @@ namespace SeleniumTests.BaseTests
         {
             if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
             {
-                string fileName = Driver.TakeScreenshot();
+                string fileName = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
                 TestContext.AddTestAttachment(fileName);
             }
             Driver.CloseDriver();
