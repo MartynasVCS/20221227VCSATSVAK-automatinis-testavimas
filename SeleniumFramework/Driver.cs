@@ -2,19 +2,20 @@
 using OpenQA.Selenium.Chrome;
 using System;
 using System.IO;
+using System.Threading;
 
 namespace SeleniumFramework
 {
     public class Driver
     {
-        private static IWebDriver driver;
+        private static ThreadLocal<IWebDriver> driver = new ThreadLocal<IWebDriver>();
 
         public static void SetupDriver(string userDataDir, string profileDir)
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArgument($"user-data-dir={userDataDir}");
             options.AddArgument($"profile-directory={profileDir}");
-            driver = new ChromeDriver(options);
+            driver.Value = new ChromeDriver(options);
         }
 
         public static void SetupDriver()
@@ -23,18 +24,18 @@ namespace SeleniumFramework
             //options.AddArgument("headless");
             //options.AddArgument("window-size=800,600");
             //options.AddArgument("start-maximized");
-            driver = new ChromeDriver(options);
+            driver.Value = new ChromeDriver(options);
         }
 
         public static IWebDriver GetDriver()
         {
-            return driver;
+            return driver.Value;
         }
 
         public static void OpenUrl(string url)
         {
             // Su refresh
-            driver.Url = url;
+            driver.Value.Url = url;
 
             // Be refresh, išlaikom veiksmus kurie galėjo būti atlikti svetainėje
             //driver.Navigate().GoToUrl(url);
@@ -42,7 +43,7 @@ namespace SeleniumFramework
 
         public static void CloseDriver()
         {
-            driver.Quit();
+            driver.Value.Quit();
         }
 
         public static string TakeScreenshot(string methodName)
@@ -51,7 +52,7 @@ namespace SeleniumFramework
             string screenshotName = $"{methodName}-{DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss")}.png";
             string screenshotFilePath = $"{screenshotsDirectoryPath}\\{screenshotName}";
 
-            Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+            Screenshot screenshot = ((ITakesScreenshot)driver.Value).GetScreenshot();
             Directory.CreateDirectory(screenshotsDirectoryPath);
             screenshot.SaveAsFile(screenshotFilePath, ScreenshotImageFormat.Png);
             return screenshotFilePath;
