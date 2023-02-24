@@ -2,8 +2,10 @@
 using SeleniumFramework;
 using SeleniumFramework.Pages.SeleniumEasy;
 
+[assembly: LevelOfParallelism(8)]
 namespace SeleniumTests.SeleniumEasy
 {
+    [Parallelizable(scope: ParallelScope.Children)]
     internal class SimpleFormDemoTests
     {
         [SetUp]
@@ -25,6 +27,12 @@ namespace SeleniumTests.SeleniumEasy
             Assert.AreEqual(expectedResult, actualResult);
         }
 
+        [TestCase("7", "5", "12")]
+        [TestCase("7", "3", "10")]
+        [TestCase("7", "2", "9")]
+        [TestCase("7", "7", "14")]
+        [TestCase("7", "8", "15")]
+        [TestCase("7", "25", "32")]
         [TestCase("7", "5", "12")]
         [TestCase("7", "a", "NaN")]
         [TestCase("-11111111111111111111111", "11111111111111111111111", "0")]
