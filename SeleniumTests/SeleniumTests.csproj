@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseTests\BaseTestSingleSession.cs" />
     <Compile Include="BaseTests\BaseTest.cs" />
     <Compile Include="BaseTests\BaseTestChromeProfile.cs" />
     <Compile Include="DemoQA\ButtonsTests.cs" />

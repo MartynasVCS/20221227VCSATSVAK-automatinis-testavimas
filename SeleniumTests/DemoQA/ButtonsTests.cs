@@ -4,9 +4,9 @@ using SeleniumTests.BaseTests;
 
 namespace SeleniumTests.DemoQA
 {
-    internal class ButtonsTests : BaseTest
+    internal class ButtonsTests : BaseTestSingleSession
     {
-        [SetUp]
+        [OneTimeSetUp]
         public void Open()
         {
             Buttons.Open();
