@@ -190,5 +190,11 @@ namespace SeleniumFramework.Pages
             WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(60));
             wait.Until(ExpectedConditions.TitleIs(expectedTitle));
         }
+
+        internal static void SwitchToIframe(string locator)
+        {
+            IWebElement frameElement = GetElement(locator);
+            Driver.GetDriver().SwitchTo().Frame(frameElement);
+        }
     }
 }

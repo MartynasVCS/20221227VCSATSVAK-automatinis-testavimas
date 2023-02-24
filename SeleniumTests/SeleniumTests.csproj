@@ -52,6 +52,7 @@
     <Compile Include="BaseTests\BaseTest.cs" />
     <Compile Include="BaseTests\BaseTestChromeProfile.cs" />
     <Compile Include="DemoQA\ButtonsTests.cs" />
+    <Compile Include="DemoQA\FramesTests.cs" />
     <Compile Include="DemoQA\SelectMenuTests.cs" />
     <Compile Include="DemoQA\TextBoxTests.cs" />
     <Compile Include="DemoQA\TooltipsTests.cs" />
